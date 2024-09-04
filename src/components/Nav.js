@@ -3,14 +3,24 @@ import styled from 'styled-components';
 
 const Nav = () => {
 
+<<<<<<< HEAD
   const [show, setShow] = useState(false);
+=======
+  const [show, setSetshow] = useState(false);
+>>>>>>> 64e734f480202361112373dc4682f1b2a1292d06
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if(window.scrollY > 50) {
+<<<<<<< HEAD
         setShow(true)
       } else {
         setShow(false)
+=======
+        setSetshow(true)
+      } else {
+        setSetshow(false)
+>>>>>>> 64e734f480202361112373dc4682f1b2a1292d06
       }
     })
   
