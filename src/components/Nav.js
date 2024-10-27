@@ -3,32 +3,23 @@ import styled from 'styled-components';
 
 const Nav = () => {
 
-<<<<<<< HEAD
   const [show, setShow] = useState(false);
-=======
-  const [show, setSetshow] = useState(false);
->>>>>>> 64e734f480202361112373dc4682f1b2a1292d06
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 50) {
-<<<<<<< HEAD
-        setShow(true)
-      } else {
-        setShow(false)
-=======
-        setSetshow(true)
-      } else {
-        setSetshow(false)
->>>>>>> 64e734f480202361112373dc4682f1b2a1292d06
-      }
-    })
+    window.addEventListener('scroll', handleScroll)
   
     return () => {
-      window.removeEventListener('scroll', () => {});
+      window.removeEventListener('scroll', handleScroll);
     }
   }, [])
   
+  const handleScroll = () => {
+    if(window.scrollY > 50) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }  
+  }
   return (
     <NavWrapper show={show}>
       <Logo>
@@ -44,13 +35,13 @@ const Nav = () => {
 
 export default Nav
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: ${props => props.show ? "#090b13" : "transparent"};
+  background-color: ${props => props.show ? "#090b13": "transparent"};
   display: flex;
   justify-content: space-between;
   align-items: center;
